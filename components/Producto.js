@@ -1,5 +1,6 @@
 import Image from "next/image"
-import { formatearDinero } from "../../helpers";
+import { formatearDinero } from "../helpers";
+
 
 const Producto = ({producto}) => {
 
