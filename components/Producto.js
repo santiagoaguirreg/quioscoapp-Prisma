@@ -3,6 +3,7 @@ import { formatearDinero } from "../helpers";
 import useQuiosco from "../hooks/useQuiosco";
 
 
+
 const Producto = ({producto}) => {
 
   const {handleSetProducto, handleSetModal} = useQuiosco()
