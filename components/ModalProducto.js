@@ -1,12 +1,24 @@
 import Image from "next/image"
 import useQuiosco from "../hooks/useQuiosco"
 import { formatearDinero } from "../helpers"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const ModalProducto = () => {
 
-    const {producto,  handleSetModal} = useQuiosco()
+    const {producto,  handleSetModal,  handleAgregarPedido, pedido} = useQuiosco()
     const [cantidad, setCantidad] = useState(1);
+    const [edicion, setEdicion] = useState(false);
+
+    useEffect(() => {
+      if(pedido.some(productoState => productoState.id === producto.id)) {
+
+        const productoEdicion = pedido.find((pedidoState) => pedidoState.id === producto.id)
+        setEdicion(true);
+        setCantidad(productoEdicion.cantidad)
+      } 
+    }, [pedido])
+
+  
   return (
     <div className='flex gap-10'>
       <div className='md:w-1/3'>
@@ -61,6 +73,16 @@ const ModalProducto = () => {
 </svg>
             </button>
         </div>
+
+        <button
+          type="button"
+          onClick={() => {
+            handleAgregarPedido({...producto, cantidad})
+          }}
+          className="bg-indigo-600 hober:bg-indigo-800 px-5 py-2 mt-5 text-white font-bold uppercase rounded"
+        >
+         {edicion ? 'Guardar cambios' : 'Añadir al Pedido'}
+        </button>
       </div>
     </div>
   )
