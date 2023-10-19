@@ -11,11 +11,6 @@ export default function Total() {
         return pedido.length === 0 || nombre === '' || nombre.length < 3;
     }
 
-    useEffect(() => {
-     comprobarPedido();
-    }, [pedido])
-
- 
 
     return (
         <Layout pagina="Total y Confirmar Pedido">
@@ -45,7 +40,7 @@ export default function Total() {
             <div className="mt-5">
                 <input 
                     type="submit"
-                    className={`${comprobarPedido() ? 'bg-indigo-100' : 'bg-indigo-600'} bg-indigo-600 w-full lg:w-auto px-5 py-2 rounded uppercase font-bold text-white text-center hover:cursor-pointer`}
+                    className={`${comprobarPedido() ? 'bg-indigo-100' : 'bg-indigo-600'} w-full lg:w-auto px-5 py-2 rounded uppercase font-bold text-white text-center hover:cursor-pointer`}
                     value="Confirmar Pedido"
                     disabled={comprobarPedido()}
                 />
