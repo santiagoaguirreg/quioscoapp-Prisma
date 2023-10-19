@@ -85,9 +85,22 @@ const QuioscoProvider = ({children}) => {
       e.preventDefault();
       
       try {
-        const {data} = await axios.post('api/ordenes', {pedido, nombre, total, fecha: Date.now().toString()})
+        await axios.post('api/ordenes', {pedido, nombre, total, fecha: Date.now().toString()})
 
-        console.log(data)
+
+   
+        setCategoriaActual(categorias[0])
+        setPedido([])
+        setNombre('')
+        setTotal(0)
+
+        toast.success('Pedido realizado correctamente')
+
+        setTimeout(() =>{
+          router.push('/')
+        }, 3000)
+    
+      
       } catch (error) {
         console.log(error)
       }
