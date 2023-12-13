@@ -19,6 +19,7 @@ const QuioscoProvider = ({children}) => {
 
     const obtenerCategorias = async () => {
          const {data} = await axios('api/categorias')
+         console.log(data)
          setCategorias(data)
     }
     useEffect(() => {

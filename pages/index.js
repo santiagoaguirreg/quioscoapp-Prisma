@@ -7,6 +7,7 @@ import Producto from '../components/Producto';
 
 export default function Home() {
   const {categoriaActual} = useQuiosco()
+  console.log(categoriaActual)
   return (
     <Layout pagina={`Menu ${categoriaActual?.nombre}`}>
       <h1 className='text-4xl font-black'>{categoriaActual?.nombre}</h1>

@@ -7,13 +7,14 @@ const ResumenProducto = ({producto}) => {
     const {handleEditarCantidad, handleEliminarProducto} = useQuiosco();
 
   return (
-    <div className='shadow p-5 mb-3 flex gap-10 items-center'>
-        <div className='md:w-1/6'>
+    <div className='shadow p-5 mb-3 flex gap-10 items-center flex-col md:flex-row'>
+        <div className='md:w-1/6 w-full justify-center'>
             <Image 
                 width={300}
                 height={400}
                 alt={`Imagen producto ${producto.nombre}`}
                 src={`/assets/img/${producto.imagen}.jpg`}
+                className="!w-3/4 !h-3/4 md:w-full md:h-full"
             />
         </div>
 
