@@ -52,6 +52,7 @@ const QuioscoProvider = ({children}) => {
       setModal(!modal)
     }
 
+
     const handleAgregarPedido = ({categoriaId, ...producto}) =>
      {
 
