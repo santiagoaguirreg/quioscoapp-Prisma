@@ -13,13 +13,14 @@ const QuioscoProvider = ({children}) => {
     const [pedido, setPedido] = useState([])
     const [nombre, setNombre] = useState('')
     const [total, setTotal] = useState(0)
+    const [buscar, setBuscar ] = useState("")
+    let results = []
+
 
     const router = useRouter()
-
-
+  
     const obtenerCategorias = async () => {
          const {data} = await axios('api/categorias')
-         console.log(data)
          setCategorias(data)
     }
     useEffect(() => {
@@ -39,7 +40,6 @@ const QuioscoProvider = ({children}) => {
 
     const handleClickCategoria = id => {
         const categoria = categorias.filter(cat => cat.id === id)
-        console.log(categoria[0])
         setCategoriaActual(categoria[0])
         router.push('/')
     }
@@ -107,6 +107,9 @@ const QuioscoProvider = ({children}) => {
       }
   }
 
+     
+
+
 
     return(
         <QuioscoContext.Provider
@@ -125,7 +128,10 @@ const QuioscoProvider = ({children}) => {
              nombre,
              setNombre,
              total,
-             colocarOrden
+             colocarOrden,
+             buscar, 
+             results,
+             setBuscar
            }}
         >
           {children}

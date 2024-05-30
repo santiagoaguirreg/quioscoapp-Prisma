@@ -42,7 +42,6 @@ export default function Total() {
                     type="submit"
                     className={`${comprobarPedido() ? 'bg-indigo-100' : 'bg-indigo-600'} w-full lg:w-auto px-5 py-2 rounded uppercase font-bold text-white text-center hover:cursor-pointer`}
                     value="Confirmar Pedido"
-                    disabled={comprobarPedido()}
                 />
 
             </div>
