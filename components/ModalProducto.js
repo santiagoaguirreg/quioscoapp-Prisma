@@ -12,7 +12,7 @@ const ModalProducto = () => {
     useEffect(() => {
       if(pedido.some(productoState => productoState.id === producto.id)) {
 
-        const productoEdicion = pedido.find((pedidoState) => pedidoState.id === producto.id)
+        const productoEdicion = pedido.find(pedidoState => pedidoState.id === producto.id)
         setEdicion(true);
         setCantidad(productoEdicion.cantidad)
       } 

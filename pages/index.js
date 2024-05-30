@@ -27,7 +27,7 @@ export default function Home() {
     <Layout pagina={`Menu ${categoriaActual?.nombre}`}>
       <h1 className='text-4xl font-black'>{categoriaActual?.nombre}</h1>
       <p className='text-2xl my-10'>
-        Elige y personaliza tus pedidos
+        Elige y personaliza tus pedidoss
       </p>
       <Search />
      

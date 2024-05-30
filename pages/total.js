@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Layout from "../layout/Layout"
 import useQuiosco from "../hooks/useQuiosco";
 import { formatearDinero } from "../helpers";
@@ -11,11 +10,13 @@ export default function Total() {
         return pedido.length === 0 || nombre === '' || nombre.length < 3;
     }
 
+  
+
 
     return (
         <Layout pagina="Total y Confirmar Pedido">
         <h1 className="text-4xl font-black">Total y Confirmar Pedido</h1>
-        <p className="text-2xl my-10">Confirma tu Pedido a Continunación</p>
+        <p className="text-2xl my-10">Confirma tu Pedido a Continuación</p>
 
         <form
          onSubmit={colocarOrden}
